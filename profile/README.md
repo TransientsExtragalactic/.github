@@ -42,32 +42,36 @@ This organization is intended to support reproducible research, collaborative so
 
 ---
 
-## What This Organization Contains
+## Organization Guide
 
-Repositories in this organization generally fall into several categories.
+This GitHub organization is intended to be both a research workspace and a long-term archive of group software, documentation, and project knowledge. The sections below describe how repositories should be created, organized, documented, permissioned, and maintained.
 
-### 1. Knowledge Base and Documentation
+<details>
+<summary><strong>Repository Types</strong></summary>
+
+Repositories in this organization generally fall into a few broad categories.
+
+### Knowledge Base and Documentation
 
 These repositories contain shared group documentation, onboarding materials, observing guides, analysis notes, tutorials, and internal references.
 
-Examples may include:
+Examples include:
 
 - Group onboarding guides
 - Telescope and instrument reduction notes
 - Observing proposal templates
 - Literature notes
-- Analysis conventions
 - Coding standards
 - Common troubleshooting guides
 - Documentation for group infrastructure
 
 These repositories are intended to help new and existing group members find information quickly and preserve institutional knowledge.
 
-### 2. Data Reduction Pipelines
+### Data Reduction Pipelines
 
 These repositories contain code for reducing astronomical data from telescopes, instruments, surveys, or public archives.
 
-Examples may include:
+Examples include:
 
 - Imaging reduction workflows
 - Spectroscopic reduction workflows
@@ -77,13 +81,13 @@ Examples may include:
 - Light-curve construction tools
 - Instrument-specific reduction scripts
 
-Where possible, reduction repositories should include clear instructions, environment files, example commands, and notes on required inputs and outputs.
+Reduction repositories should include clear setup instructions, environment files, example commands, and notes on required inputs and outputs.
 
-### 3. Scientific Analysis Code
+### Scientific Analysis Code
 
 These repositories contain code used for scientific analysis, modeling, inference, visualization, and manuscript preparation.
 
-Examples may include:
+Examples include:
 
 - Light-curve fitting
 - Spectral modeling
@@ -93,25 +97,25 @@ Examples may include:
 - Figure-generation scripts
 - Reproducibility packages for papers
 
-Repositories associated with publications should aim to include enough documentation for another researcher to understand and reproduce the major results.
+Repositories associated with publications should include enough documentation for another researcher to understand and reproduce the major results.
 
-### 4. Software Packages
+### Software Packages
 
-Some repositories may be maintained as reusable software packages rather than project-specific scripts.
+Some repositories are maintained as reusable software packages rather than project-specific scripts.
 
 These repositories should generally include:
 
 - A clear README
 - Installation instructions
-- Dependencies
+- Dependency information
 - Usage examples
 - Tests, when appropriate
 - Versioning or release notes
 - Contribution guidelines
 
-### 5. Project-Specific Repositories
+### Project-Specific Repositories
 
-Some repositories are tied to a specific transient, sample, observing program, or paper.
+Some repositories are tied to a specific transient, sample, observing program, collaboration, or paper.
 
 These may include:
 
@@ -123,90 +127,122 @@ These may include:
 - Notes for collaborators
 - Paper-specific reproducibility materials
 
-Project-specific repositories should clearly state their purpose, current status, and whether they are actively maintained.
+Project-specific repositories should clearly state their purpose, current status, maintainer, and whether they are actively maintained.
+
+</details>
 
 ---
 
-## Public and Private Repositories
+## Creating a New Repository
 
-This organization contains both **public** and **private** repositories.
+<details open>
+<summary><strong>When should I create a new repository?</strong></summary>
 
-### Public Repositories
+Create a new repository when the work is likely to be shared, maintained, reused, cited, or preserved beyond a single local analysis.
 
-Public repositories are visible outside the group and may be used for:
+Good reasons to create a repository include:
 
-- Open-source software
-- Published analysis code
-- Reproducibility packages
-- Public documentation
-- Community-facing tools
+- Starting a new science project
+- Developing a reusable reduction or analysis pipeline
+- Creating documentation for a group workflow
+- Preparing code for a paper or public release
+- Building a shared software package
+- Maintaining scripts used by multiple group members
+- Preserving analysis history for a specific transient, sample, or observing program
 
-Before making a repository public, please make sure that it does not contain private data, proprietary observations, credentials, unpublished results that should remain confidential, or collaborator-restricted materials.
+Avoid creating a new repository for very small, temporary, or purely personal scratch work unless it is expected to become useful to others.
 
-### Private Repositories
+</details>
 
-Private repositories are used for internal group work and may contain:
+<details>
+<summary><strong>How to create a repository</strong></summary>
 
-- Ongoing analyses
-- Internal documentation
-- Unpublished results
-- Proprietary or embargoed data products
-- Draft figures or manuscript materials
-- Collaboration-sensitive notes
-- Observing plans and internal logistics
+To create a new repository:
 
-Private repositories should still be organized, documented, and maintained carefully. Private does not mean temporary or undocumented.
+1. Go to the organization page.
+2. Click **New repository**.
+3. Choose a descriptive repository name.
+4. Add a short repository description.
+5. Choose **Private** by default unless the repository is intentionally public.
+6. Initialize the repository with a `README.md`.
+7. Add a `.gitignore` appropriate for the language or workflow.
+8. Add a license only if the repository is public or intended for external reuse.
+9. Add collaborators or teams with the minimum permissions needed.
 
-### Data and Access Restrictions
+Recommended default settings:
 
-Do not commit sensitive or restricted material unless the repository is specifically intended for that purpose and access has been reviewed.
+- Visibility: **Private**
+- README: **Yes**
+- `.gitignore`: **Yes**
+- License: **Only if public or reusable**
+- Branch protection: **Recommended for shared or publication-related repositories**
 
-In general, avoid committing:
+</details>
 
-- Raw proprietary data when not needed
-- Authentication tokens
-- Passwords
-- API keys
-- Personal credentials
-- Large generated files
-- Temporary analysis outputs
-- Files that should instead be stored in an archive, cloud drive, or institutional storage system
+<details>
+<summary><strong>Repository naming conventions</strong></summary>
 
-Use `.gitignore` files where appropriate.
+Use names that are clear, searchable, and specific.
 
----
+Recommended patterns:
 
-## Repository Guidelines
+```txt
+project-name
+transient-name-analysis
+instrument-reduction
+survey-name-tools
+paper-shortname-reproducibility
+software-package-name
+group-knowledge-base
+```
+</details>
+<details open>
+<summary><strong>Managing Permissions</strong></summary>
 
-Each repository should include a README that explains:
+Repository permissions should be managed carefully so that group members and collaborators have the access they need without exposing private work, unpublished results, proprietary data, or administrative settings unnecessarily.
 
-- What the repository is for
-- Who maintains it
-- Whether it is active, archived, experimental, or publication-related
-- How to install or set up the code
-- How to run the main workflow
-- What data are required
-- Where outputs are written
-- Any important caveats
-- How to cite the repository or associated paper, if applicable
+As a general rule, use the **least-privilege principle**: give each person the lowest level of access that allows them to do their work.
 
-For code repositories, we recommend including:
+### Permission levels
 
-- `README.md`
-- `LICENSE`, if public
-- `environment.yml`, `requirements.txt`, or `pyproject.toml`
-- `.gitignore`
-- Example scripts or notebooks
-- Tests, if the code is intended to be reusable
-- Documentation for major functions or workflows
+GitHub repositories typically support the following permission levels:
 
-For project repositories, we recommend including a short status section, such as:
+| Permission | What it allows | Recommended use |
+|---|---|---|
+| Read | View and clone the repository | Group members or collaborators who only need to inspect files |
+| Triage | Manage issues and pull requests without changing code | Helpers managing project organization or documentation tasks |
+| Write | Push branches, open pull requests, and contribute code | Active project contributors |
+| Maintain | Manage repository settings without full administrative control | Repository maintainers or senior project members |
+| Admin | Full control over repository settings and access | Organization admins, PIs, or designated technical leads |
 
-```md
-## Status
+Recommended defaults:
 
-This repository is:
-- Active / archived / under development
-- Public / private
-- Associated with: paper, project, transient, observing program, or internal workflow
-- Maintainer: Name or GitHub handle
+- Use **Read** for people who only need to view documentation or code.
+- Use **Write** for active contributors.
+- Use **Maintain** for people responsible for repository organization, issues, settings, or releases.
+- Use **Admin** only when someone needs to manage access, visibility, deletion, transfer, or other sensitive settings.
+
+Avoid giving **Admin** access by default.
+
+### Organization-level versus repository-level access
+
+Access can be granted at different levels:
+
+- **Organization-level access** gives someone membership in the GitHub organization.
+- **Team-level access** gives a group of people access to a set of repositories.
+- **Repository-level access** gives a specific person access to one repository.
+
+Whenever possible, use **teams** rather than adding many individuals separately. Teams make it easier to manage access when people join or leave projects.
+
+Suggested team patterns:
+
+```txt
+group-members
+postdocs
+graduate-students
+undergraduate-students
+external-collaborators
+project-name-team
+paper-shortname-team
+repository-maintainers
+organization-admins
