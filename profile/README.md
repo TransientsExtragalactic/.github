@@ -9,14 +9,14 @@
   </tr>
 </table>
 
-<h1 align="center">TRansient EXtragalactic Research Group</h1>
+<h1 align="center">TRansients EXtragalactic Research Group</h1>
 
 <p align="center">
   <strong>Extragalactic transients, explosive astrophysics, and time-domain discovery at UC Berkeley</strong>
 </p>
 
 
-Welcome to the GitHub organization for the **TRansient EXtragalactic** research group at the University of California, Berkeley.
+Welcome to the GitHub organization for the **TRansients EXtragalactic** research group at the University of California, Berkeley.
 
 Our group studies energetic and rapidly evolving astrophysical phenomena beyond the Milky Way, including gamma-ray bursts, supernovae, luminous fast blue optical transients, tidal disruption events, and other explosive or accretion-powered transients. This GitHub organization serves as a shared home for our code, documentation, analysis tools, data-reduction workflows, and group knowledge base.
 
@@ -24,7 +24,7 @@ Our group studies energetic and rapidly evolving astrophysical phenomena beyond 
 
 ## About the Group
 
-The TRansient EXtragalactic group focuses on the discovery, observation, modeling, and interpretation of extragalactic transient events. Our work spans observational astronomy, multi-wavelength follow-up, numerical and statistical modeling, data reduction, and population-level studies.
+The TRansients EXtragalactic group focuses on the discovery, observation, modeling, and interpretation of extragalactic transient events. Our work spans observational astronomy, multi-wavelength follow-up, numerical and statistical modeling, data reduction, and population-level studies.
 
 Topics of interest include, but are not limited to:
 
